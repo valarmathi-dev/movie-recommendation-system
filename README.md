@@ -1,37 +1,50 @@
-Subject: README TEMPLATE - Spam Email Classifier
+Subject: README TEMPLATE - Movie Recommendation System
 
-# 📧 Spam Email Classifier
+# 🎬 Movie Recommendation System
 
-A Machine Learning project that detects whether a given email/message is **Spam** or **Not Spam** using Natural Language Processing (NLP).
+A simple Machine Learning project that recommends movies similar to a selected title using **Content-Based Filtering** techniques.
 
 ---
 
 ## 🚀 Project Overview
 
-This project applies text processing and machine learning to classify email messages as spam or ham.
-It uses a dataset of labeled SMS/email messages and trains a classifier to automatically detect spam.
+This model recommends movies based on how similar they are to a given movie.
+It analyzes:
+
+* Plot/overview
+* Genres
+* Keywords
+* Cast
+* Crew
+  (Depending on your dataset)
+
+It then matches the user’s chosen movie with others that have similar features.
 
 ---
 
 ## 🧠 Features
 
-✔ Clean and preprocess text data
-✔ Convert text to numerical vectors (CountVectorizer)
-✔ Train a Naive Bayes classification model
-✔ Predict if a message is SPAM or NOT SPAM
-✔ Achieve good accuracy with a lightweight model
+✔ Recommend movies based on similarity
+✔ Uses textual attributes from movie metadata
+✔ Cosine similarity for comparison
+✔ Fast predictions after preprocessing
+✔ Beginner-friendly ML/NLP workflow
 
 ---
 
 ## 📂 Dataset
 
-Dataset used: `spam.csv`
-Contains two columns:
+Common datasets used:
 
-* **label**: spam/ham
-* **message**: message content
+* **tmdb_5000_movies.csv**
+* **tmdb_5000_credits.csv**
 
-Source: Public Spam SMS Dataset widely used on Kaggle and ML tutorials
+You can download them from Kaggle or use any movie dataset with:
+
+* movie_id
+* title
+* overview
+* genres, keywords, etc.
 
 ---
 
@@ -39,10 +52,11 @@ Source: Public Spam SMS Dataset widely used on Kaggle and ML tutorials
 
 * Python
 * Pandas
-* Scikit-learn
 * NumPy
-* CountVectorizer
-* Naïve Bayes Classifier
+* Scikit-Learn
+* Cosine Similarity
+* CountVectorizer / TF-IDF
+* Optional: Streamlit UI
 
 ---
 
@@ -57,45 +71,55 @@ pip install -r requirements.txt
 ### 2️⃣ Run the script
 
 ```
-python spam_classifier.py
+python movie_recommender.py
 ```
 
-### 3️⃣ Test with your own message (inside the program)
+### 3️⃣ Enter a movie name
+
+```
+Enter movie: Avatar
+```
+
+### 4️⃣ Output example
+
+```
+Movies similar to "Avatar":
+1. The Avengers
+2. Guardians of the Galaxy
+3. Prometheus
+4. Star Trek
+5. John Carter
+```
 
 ---
 
 ## 📊 Model & Methods
 
-* Train-test split
-* Text vectorization using Bag of Words
-* Multinomial Naive Bayes algorithm
-* Accuracy score printed after training
-
----
-
-## 📌 Output Example
-
-```
-Enter a message: Congratulations! You won a $500 gift card!
-Prediction: SPAM
-```
-
----
+* Text preprocessing
+* Feature engineering using Bag-of-Words or TF-IDF
+* Cosine similarity matrix
+* Nearest movie matches
+* Vectorization and similarity computation only once at startup for speed
 
 ---
 
 ## 📈 Future Improvements
 
-* Streamlit UI
-* Flask API
-* Deploy on web/cloud
+* Build a UI with Streamlit or Flask
+* Add user rating filtering
+* Hybrid recommendation (content + collaborative)
+* Deploy online
 
 ---
 
-## 👨‍💻 Author
+## 🙌 Author
 
 **Valarmathi R**
-Intern at CodeCT Technologies
-GitHub: valarmathircsbs-pixel
+AI/ML Intern – CodeCT Technologies
+GitHub:valarmathircsbs-pixel
 
 ---
+
+## 👍 Notes
+
+This project is designed for learning ML concepts and applying NLP similarity techniques in real-world scenarios.
