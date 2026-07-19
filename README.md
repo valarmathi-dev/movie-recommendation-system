@@ -116,7 +116,7 @@ Movies similar to "Avatar":
 
 **Valarmathi R**
 AI/ML Intern – CodeCT Technologies
-GitHub:valarmathircsbs-pixel
+GitHub:valarmathi-dev
 
 ---
 
